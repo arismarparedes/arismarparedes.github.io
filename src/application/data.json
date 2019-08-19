@@ -1,0 +1,56 @@
+{
+	"projects": 
+	[
+		{
+			"title": "Polytech - Web project",
+			"source": "src/img/polytech.jpg"
+		},
+		{
+			"title": "El galpón cerámico - Web project",
+			"source": "src/img/el-galpon-ceramico.jpg"
+		},
+		{
+			"title": "1bit.space - Instagram Histories (Social Media)",
+			"source": "src/img/1bit-space-social-media.jpg"
+		}
+	],
+
+
+
+	"skills": [
+		{"name": "Marketing digital", "percent": "80%"},
+		{"name": "Publicidad", "percent": "80%"},
+		{"name": "Social Media", "percent": "80%"},
+		{"name": "Diseño web", "percent": "80%"},
+		{"name": "Wordpress", "percent": "80%"},
+		{"name": "CSS3", "percent": "80%"},
+		{"name": "HTML5", "percent": "80%"},
+		{"name": "Photoshop", "percent": "80%"},
+		{"name": "Illustrator", "percent": "80%"}
+	],
+
+
+
+
+
+	"socials": [
+		{"name": "Behance", 
+		"link": "https://www.behance.net/arismarparedes",
+		"source": "src/img/behance.svg"},
+		
+
+		{"name": "Instagram", 
+		"link": "https://www.instagram.com/arisprds/",
+		"source": "src/img/instagram.svg"},
+		
+
+		{"name": "Twitter", 
+		"link": "https://www.twitter.com/Arismarense",
+		"source": "src/img/twitter.svg"},
+		
+
+		{"name": "LinkedIn", 
+		"link": "http://linkedin.com/in/arismar-paredes/",
+		"source": "src/img/linkedin.svg"}
+	]
+}

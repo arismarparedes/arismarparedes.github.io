@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+	<meta charset="UTF-8" >
+	<script>
+		var page = {
+			title: "Arismar Paredes - Portfolio. Publicist & web design.",
+			content: "index.html",
+			locale: "es_ES",
+			description: "Arismar Paredes - Portfolio. Publicist & web design.",
+			image: "",
+			type: "Portfolio",
+			site_name: "arismarparedes.github.io", 
+			twitter: "Arismarense",
+			copyright: "Arismar Paredes",
+			published_time: "2019-08-18",			
+			modified_time: "2019-08-18",
+			robots: "index, follow",
+			url: "arismarparedes.github.io",
+			keywords: "Arismar, Paredes, Arismar Paredes, Web design, freelancer, publicista, publicist, photoshop, css3, css, HTML, Wordpress, WooCommerce, CMS, HTML5",
+		}		
+	</script>
+	<script type="text/javascript" src="src/app.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="icon" type="image/png" href="/favicon.ico" />
+	<script type="application/ld+json">
+	{
+	    "@context": "http://schema.org",
+	    "@type": "WebPage",
+	    "name": "Arismar Paredes - Portfolio. Publicist & web design.",
+	    "description": "Arismar Paredes - Portfolio. Publicist & web design.",
+	    "primaryImageOfPage": "",
+	    "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+	}
+	</script>	
+	<link rel="stylesheet" href="src/bulma.css">
+	<link rel="stylesheet" href="src/app.css">
+	<script type="text/javascript" src="https://gitcdn.link/repo/Yerikmiller/turpialjs/master/turpial.es5.js"></script>
+	<script>
+		!function(c){"use strict";var e=function(e,t,n,r){var o,i=c.document,a=i.createElement("link");if(t)o=t;else{var d=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var f=i.styleSheets;if(r)for(var l in r)r.hasOwnProperty(l)&&a.setAttribute(l,r[l]);a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,t?o:o.nextSibling)});var s=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){s(e)})};function u(){a.addEventListener&&a.removeEventListener("load",u),a.media=n||"all"}return a.addEventListener&&a.addEventListener("load",u),(a.onloadcssdefined=s)(u),a};"undefined"!=typeof exports?exports.loadCSS=e:c.loadCSS=e}("undefined"!=typeof global?global:this);
+	</script>
+	<script>
+		var turpial = new Turpial({
+			public_path: "/arismarparedes.github.io",
+			core_path: "/arismarparedes.github.io" + "src/application/",  			
+		});
+		var application = turpial.public_path + "/src/application/";
+		window.addEventListener("load", function(){		  
+		  loadCSS( "https://fonts.googleapis.com/css?family=Roboto:300,400,700" );
+		})
+	</script>
+</head>
+<body>
+	<div id="main-styles"><!-- styles includes with turpial --></div>
+	<header id="main-header">
+		
+	</header>
+	<main class="grid article-full">		
+		<div class="col_12 article-full merri" id="main-content">
+			
+		</div>
+	</main>
+	<footer class="grid article-full">
+		<div id="main-footer"></div>
+	</footer>
+	<script>
+		turpial.include({
+			files: application + "styles.html",
+			type: "text",
+			options: {
+				"Cache-Control": "no-cache",
+			},
+			ready: function( styles ){
+				styles = styles[0]; // point to first file.
+				turpial.insert("main-styles", styles);			
+			}
+		})
+		turpial.include({
+			type: "text",
+			files: [
+				application + "header.html",
+				application + "content/" + page.content,
+				application + "footer.html",
+			],
+			options: {
+				"Cache-Control": "no-cache",
+			},			
+			ready: function( files ){
+				var header 	= files[0];
+				var main 	= files[1];
+				var footer 	= files[2];
+				
+				turpial.insert("main-header", header);
+				turpial.insert("main-content", main);
+				turpial.insert("main-footer", footer);
+
+				const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+				  if ($navbarBurgers.length > 0) {
+				    $navbarBurgers.forEach(function(el){
+				      el.addEventListener('click', function(){
+				        const target = el.dataset.target;
+				        const $target = document.getElementById(target);
+				        el.classList.toggle('is-active');
+				        $target.classList.toggle('is-active');
+
+				      });
+				    });
+				  }			
+
+				turpial.include({
+					files: [
+						"src/application/data.json"
+					],
+					type: "text",
+					options: {
+						"Cache-Control": "no-cache",
+					},	
+					ready: function( texts ){
+						var data = texts[0];
+						data = JSON.parse(data);
+
+						var forSkillsHead = "";
+						data.skills.forEach(function(skill, key){
+						if((key+1)%2 === 0){
+							var color = "bg-color-fucsia";
+						}else{
+							var color = "bg-color-purple"
+						}
+						forSkillsHead += turpial.el("span", {class: "tag has-text-white " +color}, skill.name);    
+						});
+						turpial.insert("skills-at-hero", forSkillsHead);
+
+						var els = "";
+						data.projects.forEach(function(project){
+							els += templates.projects({
+								title: project.title,
+								source: project.source,
+							})
+						})
+						turpial.insert("projects", els);
+
+						var skillsPercent= "";
+						data.skills.forEach(function(skill){
+							skillsPercent += templates.skills({
+								name: skill.name,
+								percent: skill.percent,
+							})
+						})
+						turpial.insert("skills-percent", skillsPercent);
+
+						var socialsFooter = "";
+						data.socials.forEach(function( social ){
+							socialsFooter += templates.socials({
+								width: "42px",
+								padding: "12px",
+								name: social.name,
+								source: social.source,
+								link: social.link,
+							})
+						})
+						turpial.insert("socials-footer", socialsFooter);
+
+						var socialsHeader = "";
+						data.socials.forEach(function( social ){
+							socialsHeader += templates.socials({
+								width: "20px",
+								padding: "5px",
+								name: social.name,
+								source: social.source,
+								link: social.link,
+							})
+						})
+						turpial.insert("socials-header", socialsHeader);
+
+
+					document.querySelectorAll(".lazyload").forEach(function(t){var e=t.getAttribute("data-src");null!==e&&(t.src=e)})
+
+
+					}
+				})				
+									
+			}
+		});
+		/* CHATRA */
+		(function(d, w, c) {
+	        w.ChatraID = '6QjNCXoZojDjxqmzY';
+	        var s = d.createElement('script');
+	        w[c] = w[c] || function() {
+	            (w[c].q = w[c].q || []).push(arguments);
+	        };
+	        s.async = true;
+	        s.src = 'https://call.chatra.io/chatra.js';
+	        if (d.head) d.head.appendChild(s);
+	    })(document, window, 'Chatra');
+	    /* CHATRA */
+	</script>
+</body>
+</html>
