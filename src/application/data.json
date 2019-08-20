@@ -18,15 +18,16 @@
 
 
 	"skills": [
-		{"name": "Marketing digital", "percent": "80%"},
-		{"name": "Publicidad", "percent": "80%"},
-		{"name": "Social Media", "percent": "80%"},
-		{"name": "Diseño web", "percent": "80%"},
+		{"name": "Marketing digital", "percent": "70%"},
+		{"name": "Publicidad", "percent": "95%"},
+		{"name": "Social Media", "percent": "70%"},
+		{"name": "Diseño web", "percent": "85%"},
 		{"name": "Wordpress", "percent": "80%"},
 		{"name": "CSS3", "percent": "80%"},
-		{"name": "HTML5", "percent": "80%"},
-		{"name": "Photoshop", "percent": "80%"},
+		{"name": "HTML5", "percent": "100%"},
+		{"name": "Photoshop", "percent": "68%"},
 		{"name": "Illustrator", "percent": "80%"}
+		{"name": "CorelDraw", "percent": "98%"}
 	],
 
 
